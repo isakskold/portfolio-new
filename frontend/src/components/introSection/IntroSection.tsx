@@ -16,24 +16,27 @@ const images = [
 
 const IntroSection = () => {
   return (
-    <section className="flex flex-col justify-center pt-40 gap-12">
-      <h1 className="flex justify-center text-white text-6xl text-center font-semibold italic">
-        Isak Sköld
-      </h1>
-      <h2 className="flex justify-center text-gray-400 text-4xl text-center leading-normal">
-        Functionality Oriented <br /> Web Developer
-      </h2>
-      <aside className="flex flex-wrap justify-center gap-1 sm:gap-3 md:gap-6">
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image.src}
-            alt={image.alt}
-            className="w-16 sm:w-18 md:w-20 lg:w-22 xl:w-24 max-w-full h-auto"
-          />
-        ))}
-      </aside>
-    </section>
+    <>
+      <section className="flex flex-col justify-center gap-12 pt-40">
+        <h1 className="flex justify-center text-center text-4xl font-semibold italic text-white sm:text-5xl md:text-6xl">
+          Isak Sköld
+        </h1>
+        <h2 className="text-greyCustom flex justify-center text-center text-2xl leading-normal sm:text-3xl md:text-4xl">
+          Functionality Oriented <br /> Web Developer
+        </h2>
+
+        <aside className="flex flex-wrap justify-center gap-1 xs:gap-2 sm:gap-3 md:gap-6">
+          {images.map((image, index) => (
+            <img
+              key={index}
+              src={image.src}
+              alt={image.alt}
+              className="h-auto w-12 max-w-full xs:w-14 sm:w-16 lg:w-20"
+            />
+          ))}
+        </aside>
+      </section>
+    </>
   );
 };
 
