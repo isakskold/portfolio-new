@@ -1,4 +1,4 @@
-# Dependencies and Plugins Documentation
+## Dependencies and Plugins Documentation
 
 ### **autoprefixer**
 
