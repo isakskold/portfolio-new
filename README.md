@@ -2,6 +2,12 @@
 
 This is a second personal portfolio site, where I showcase my skills, projects, and experience. The goal is to create a dynamic and interactive portfolio with a modern tech stack.
 
+## Development Plan
+
+The initial version of the portfolio will be built using only the frontend stack. This approach allows for a fast and simple development process, focusing on the UI, user experience, and responsiveness. The content will be hard-coded directly into the React app for the sake of simplicity and speed.
+
+In the future, the portfolio will be reworked to integrate the backend and AWS, allowing for easier content management. This will include creating an admin dashboard for dynamically inserting and updating data (such as project details, skills, and other content) through the backend. AWS will also be used for connecting the frontend and backend, making the process of managing the portfolio more efficient and scalable.
+
 ## Stack
 
 ### **Frontend**
