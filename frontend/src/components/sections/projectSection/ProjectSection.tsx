@@ -20,10 +20,10 @@ const projects: Project[] = [
 
 const ProjectSection = () => {
   return (
-    <section className="bg-white">
+    <section className="bg-white p-6">
       <h2>Projects</h2>
       {projects.map((project, index) => (
-        <article key={index}>
+        <article key={index} className="bg-gray-400">
           {/* Title */}
           <h3>{project.title}</h3>
 
@@ -37,11 +37,13 @@ const ProjectSection = () => {
 
           {/* Description */}
           {project.description.map((paragraph, paragraphIndex) => (
-            <p key={paragraphIndex}>{paragraph}</p>
+            <p key={paragraphIndex} className="my-5">
+              {paragraph}
+            </p>
           ))}
 
           {/* Skills */}
-          <ul>
+          <ul className="flex justify-evenly gap-6">
             {project.skills.map((skill, skillIndex) => (
               <li key={skillIndex}>{skill}</li>
             ))}
