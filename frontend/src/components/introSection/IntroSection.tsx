@@ -21,17 +21,17 @@ const IntroSection = () => {
         <h1 className="flex justify-center text-center text-4xl font-semibold italic text-white sm:text-5xl md:text-6xl">
           Isak Sköld
         </h1>
-        <h2 className="text-greyCustom flex justify-center text-center text-2xl leading-normal sm:text-3xl md:text-4xl">
+        <h2 className="flex justify-center text-center text-2xl leading-normal text-greyCustom sm:text-3xl md:text-4xl">
           Functionality Oriented <br /> Web Developer
         </h2>
 
-        <aside className="flex flex-wrap justify-center gap-1 xs:gap-2 sm:gap-3 md:gap-6">
+        <aside className="flex flex-wrap justify-center gap-2 xs:gap-3 sm:gap-4 md:gap-6">
           {images.map((image, index) => (
             <img
               key={index}
               src={image.src}
               alt={image.alt}
-              className="h-auto w-12 max-w-full xs:w-14 sm:w-16 lg:w-20"
+              className="h-auto w-10 max-w-full rounded-full shadow-[0_-2px_12px_rgba(255,255,255,0.4),0_3px_6px_rgba(255,255,255,0.3)] xs:w-12 sm:w-16 lg:w-20"
             />
           ))}
         </aside>
