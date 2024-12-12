@@ -1,9 +1,9 @@
-import reactIcon from "../../assets/react.svg";
-import tsIcon from "../../assets/typescript.svg";
-import jsIcon from "../../assets/javascript.svg";
-import twIcon from "../../assets/tailwind.svg";
-import awsIcon from "../../assets/Aws.svg";
-import gitIcon from "../../assets/git.svg";
+import reactIcon from "../../../assets/react.svg";
+import tsIcon from "../../../assets/typescript.svg";
+import jsIcon from "../../../assets/javascript.svg";
+import twIcon from "../../../assets/tailwind.svg";
+import awsIcon from "../../../assets/Aws.svg";
+import gitIcon from "../../../assets/git.svg";
 
 const images = [
   { src: reactIcon, alt: "react" },
