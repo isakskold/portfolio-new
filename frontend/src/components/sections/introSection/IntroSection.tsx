@@ -4,8 +4,9 @@ import jsIcon from "../../../assets/javascript.svg";
 import twIcon from "../../../assets/tailwind.svg";
 import awsIcon from "../../../assets/Aws.svg";
 import gitIcon from "../../../assets/git.svg";
+import { IconImages } from "./IntroSection.types";
 
-const images = [
+const images: IconImages[] = [
   { src: reactIcon, alt: "react" },
   { src: tsIcon, alt: "typescript" },
   { src: jsIcon, alt: "javascript" },
