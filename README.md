@@ -1,6 +1,6 @@
 # Portfolio
 
-This is a second personal portfolio site, where I showcase my skills, projects, and experience. The goal is to create a dynamic and interactive portfolio with a modern tech stack.
+This is a second personal portfolio site, where I showcase my skills, projects, and experience. The goal is to create a dynamic and interactive portfolio with a modern tech stack. Also, the UI is intended to be more "recruiter friendly" than my previous portfolio website.
 
 ## Development Plan
 
