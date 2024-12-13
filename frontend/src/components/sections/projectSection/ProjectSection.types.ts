@@ -5,7 +5,7 @@ interface ProjectImage {
 
 export interface Project {
   title: string;
-  status: "completed" | "in-progress" | "archived";
+  status: "Completed" | "In-progress" | "Archived";
   images: ProjectImage[];
   description: string[];
   skills: string[];
