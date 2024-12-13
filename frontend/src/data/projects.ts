@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     title: "Vegaway",
     status: "completed",
-    images: [{ src: "", alt: "Project Image" }],
+    images: [{ src: "/vegawayhome.PNG", alt: "Project Image" }],
     description: [
       "Fullstack group project in school. Vegaway is a fictional vegetarian takeaway application.",
       "Users can create accounts, place orders and view their order history. Staff account can access admin panel to handle incoming orders.",
