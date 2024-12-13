@@ -3,7 +3,7 @@ import { Project } from "../components/sections/projectSection/ProjectSection.ty
 export const projects: Project[] = [
   {
     title: "Vegaway",
-    status: "completed",
+    status: "Completed",
     images: [{ src: "/vegawayhome.PNG", alt: "Project Image" }],
     description: [
       "Fullstack group project in school. Vegaway is a fictional vegetarian takeaway application.",
