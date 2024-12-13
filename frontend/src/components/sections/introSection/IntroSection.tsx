@@ -22,7 +22,7 @@ const IntroSection = () => {
         <h1 className="flex justify-center text-center text-4xl font-semibold italic text-white sm:text-5xl md:text-6xl">
           Isak Sköld
         </h1>
-        <h2 className="flex justify-center text-center text-2xl leading-normal text-greyCustom sm:text-3xl md:text-4xl">
+        <h2>
           Functionality Oriented <br /> Web Developer
         </h2>
 
