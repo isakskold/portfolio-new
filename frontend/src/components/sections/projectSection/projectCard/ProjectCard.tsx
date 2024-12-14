@@ -1,5 +1,6 @@
 import { Project } from "../ProjectSection.types";
 import useActiveProjectStore from "../../../../stores/useActiveProjectStore";
+import StatusBadge from "../../../utils/StatusBadge";
 
 interface ProjectCardProps {
   project: Project;
@@ -37,20 +38,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
       {/* Card "Footer" */}
       <div className="flex items-center justify-between p-3">
-        <span
-          className={`rounded-[3.75rem] border-2 border-solid border-black p-2 text-xs font-semibold sm:text-base ${
-            /* Conditionally set background color */
-            project.status === "Completed"
-              ? "bg-green-500"
-              : project.status === "Archived"
-                ? "bg-red-500"
-                : project.status === "In-progress"
-                  ? "bg-yellow-500"
-                  : ""
-          }`}
-        >
-          {project.status}
-        </span>
+        <StatusBadge status={project.status} />
         {/* Link icon */}
         <a
           href={project.link}
