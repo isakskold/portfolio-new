@@ -18,6 +18,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <h3 className="text-base font-bold sm:text-lg md:text-xl">
           {project.title}
         </h3>
+        <img src="/eyeIcon.svg" alt="Eye Icon" className="h-auto w-8" />
       </div>
 
       {/* Display the first image in the project object */}
