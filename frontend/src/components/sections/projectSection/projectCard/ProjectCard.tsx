@@ -6,23 +6,25 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <div className="w-72 flex-shrink-0 rounded-2xl bg-greyCustom shadow-[0_-2px_12px_rgba(255,255,255,0.4),0_3px_6px_rgba(255,255,255,0.3)]">
+    <div className="w-52 flex-shrink-0 rounded-2xl bg-greyCustom shadow-[0_-2px_12px_rgba(255,255,255,0.4),0_3px_6px_rgba(255,255,255,0.3)] sm:w-60 md:w-72">
       {/* Title */}
-      <h3 className="p-3 text-xl font-bold">{project.title}</h3>
+      <h3 className="p-3 text-base font-bold sm:text-lg md:text-xl">
+        {project.title}
+      </h3>
 
       {/* Display the first image in the project object */}
       {project.images && project.images.length > 0 && (
         <img
           src={project.images[0].src}
           alt={project.images[0].alt}
-          className="h-52 w-full rounded-lg object-cover object-center"
+          className="h-40 w-full rounded-lg object-cover object-center sm:h-48 md:h-52"
         />
       )}
 
       {/* Card "Footer" */}
       <div className="flex items-center justify-between p-3">
         <span
-          className={`rounded-[3.75rem] border-2 border-solid border-black p-2 font-semibold ${
+          className={`rounded-[3.75rem] border-2 border-solid border-black p-2 text-xs font-semibold sm:text-base ${
             /* Conditionally set background color */
             project.status === "Completed"
               ? "bg-green-500"
@@ -35,7 +37,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         >
           {project.status}
         </span>
-        {/* Link icon here */}
+        {/* Link icon */}
         <a
           href={project.link}
           target="_blank"
