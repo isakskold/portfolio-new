@@ -11,7 +11,7 @@ const ProjectSection = () => {
       <h2 className="mb-8">Projects</h2>
 
       {/* Render Project Cards. Horizontal slider for responsiveness */}
-      <div className="ove rflow-x-auto flex w-screen px-12 py-2">
+      <div className="flex w-screen overflow-x-auto px-12 py-2">
         <div className="ml-auto mr-auto flex w-max gap-10">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} />
