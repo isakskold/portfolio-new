@@ -6,7 +6,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <div className="w-72 rounded-2xl bg-gray-200">
+    <div className="w-72 rounded-2xl bg-greyCustom shadow-[0_-2px_12px_rgba(255,255,255,0.4),0_3px_6px_rgba(255,255,255,0.3)]">
       {/* Title */}
       <h3 className="p-3 text-xl font-bold">{project.title}</h3>
 
