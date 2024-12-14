@@ -20,7 +20,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       )}
 
       {/* Card "Footer" */}
-      <div className="flex justify-between p-3">
+      <div className="flex items-center justify-between p-3">
         <span
           className={`rounded-[3.75rem] border-2 border-solid border-black p-2 font-semibold ${
             /* Conditionally set background color */
@@ -36,6 +36,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {project.status}
         </span>
         {/* Link icon here */}
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="h-fit"
+        >
+          <img src="/linkIcon.svg" alt="Link" className="h-auto w-8" />
+        </a>
       </div>
     </div>
   );
