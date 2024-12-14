@@ -1,16 +1,24 @@
 import { Project } from "../ProjectSection.types";
+import useActiveProjectStore from "../../../../stores/useActiveProjectStore";
 
 interface ProjectCardProps {
   project: Project;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  const { setActiveProject } = useActiveProjectStore();
+
   return (
     <div className="w-52 flex-shrink-0 rounded-2xl bg-greyCustom shadow-[0_-2px_12px_rgba(255,255,255,0.4),0_3px_6px_rgba(255,255,255,0.3)] sm:w-60 md:w-72">
-      {/* Title */}
-      <h3 className="p-3 text-base font-bold sm:text-lg md:text-xl">
-        {project.title}
-      </h3>
+      {/* Card "Header" */}
+      <div
+        className="flex cursor-pointer items-center justify-between p-3"
+        onClick={() => setActiveProject(project)}
+      >
+        <h3 className="text-base font-bold sm:text-lg md:text-xl">
+          {project.title}
+        </h3>
+      </div>
 
       {/* Display the first image in the project object */}
       {project.images && project.images.length > 0 && (
