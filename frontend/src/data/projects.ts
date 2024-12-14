@@ -1,5 +1,16 @@
 import { Project } from "../components/sections/projectSection/ProjectSection.types";
 
+/* Boilerplate object
+
+  title: "",
+  status: "",
+  images: [{ src: "", alt: "Project Image" }],
+  description: [],
+  skills: [],
+  link: "",
+  gitHub: "", 
+*/
+
 export const projects: Project[] = [
   {
     title: "Vegaway",
@@ -15,5 +26,16 @@ export const projects: Project[] = [
     skills: ["React", "TypeScript", "AWS"],
     link: "https://www.veg-away.com/",
     gitHub: "https://github.com/Linuszackrisson/vegaway-app",
+  },
+  {
+    title: "Portfolio",
+    status: "Archived",
+    images: [{ src: "/portfolio.PNG", alt: "Project Image" }],
+    description: [
+      "My first portfolio website. I decided to stop working on this and focus on my new portfolio instead.",
+    ],
+    skills: ["React", "Javascript"],
+    link: "https://isakskold.github.io/portfolio/",
+    gitHub: "https://github.com/isakskold/portfolio",
   },
 ];
