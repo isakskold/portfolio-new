@@ -10,6 +10,7 @@ function App() {
       <IntroSection />
       <Hr />
       <ProjectSection />
+      <Hr />
     </Wrapper>
   );
 }
