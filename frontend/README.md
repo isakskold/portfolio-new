@@ -35,3 +35,12 @@
   Included in the `prettier` section of `package.json`.
 - **Why:**  
   This helps keep Tailwind CSS classes organized and ensures consistent formatting across the codebase.
+
+### **zustand**
+
+- **Purpose:**  
+  A small, fast, and scalable state management solution for React. It allows for easy global state management with a minimal API, focusing on simplicity and performance.
+- **Configuration:**  
+  Zustand stores are created by calling the `create` function and defining the state and actions inside the store. The store can be used by importing the hook into the relevant components.
+- **Why:**  
+  Zustand simplifies state management by avoiding the boilerplate commonly seen in Redux or Context API, making it a good choice for projects where you need a simple and fast way to manage shared state across components. It can be especially useful in React applications where components need to react to shared state changes.
