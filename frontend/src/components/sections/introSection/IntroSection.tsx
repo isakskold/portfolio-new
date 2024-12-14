@@ -32,7 +32,7 @@ const IntroSection = () => {
               key={index}
               src={image.src}
               alt={image.alt}
-              className="h-auto w-12 max-w-full rounded-full shadow-[0_-2px_12px_rgba(255,255,255,0.4),0_3px_6px_rgba(255,255,255,0.3)] xs:w-14 sm:w-16 lg:w-20"
+              className="h-auto w-12 max-w-full rounded-full shadow-[0_-2px_12px_rgba(255,255,255,0.4),0_3px_6px_rgba(255,255,255,0.3)] sm:w-16 lg:w-20"
             />
           ))}
         </aside>
