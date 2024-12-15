@@ -7,7 +7,7 @@ interface ProjectDetailsProps {
 
 const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project }) => {
   return (
-    <article className="mt-8 flex w-screen flex-col rounded-2xl bg-greyCustom sm:w-auto">
+    <article className="mt-8 flex w-[95vw] flex-col rounded-2xl bg-greyCustom sm:w-auto">
       {/* Details Header */}
       <div className="flex flex-wrap items-center justify-between p-3">
         {/* Title Section */}
