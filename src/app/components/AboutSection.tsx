@@ -8,8 +8,8 @@ export default function AboutSection() {
         <div className="flex flex-col items-center mb-2">
           <h2 className="text-2xl font-bold text-cyan-400 mb-1">About Me</h2>
           <p className="text-center text-slate-300 text-lg font-medium max-w-md mb-6">
-            I'm Isak, a 26-year-old Swedish Web Developer. After four years as a
-            ventilation fitter, I returned to education with a fresh
+            I&apos;m Isak, a 26-year-old Swedish Web Developer. After four years
+            as a ventilation fitter, I returned to education with a fresh
             perspective.
           </p>
           <p className="text-center text-slate-300 text-lg font-medium max-w-md mb-6">
