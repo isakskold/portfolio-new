@@ -1,35 +1,36 @@
-# Portfolio
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-This is a second personal portfolio site, where I showcase my skills, projects, and experience. The goal is to create a dynamic and interactive portfolio with a modern tech stack. Also, the UI is intended to be more "recruiter friendly" than my previous portfolio website.
+## Getting Started
 
-## Development Plan
+First, run the development server:
 
-The initial version of the portfolio will be built using only the frontend stack. This approach allows for a fast and simple development process, focusing on the UI, user experience, and responsiveness. The content will be hard-coded directly into the React app for the sake of simplicity and speed.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-In the future, the portfolio will be reworked to integrate the backend and AWS, allowing for easier content management. This will include creating an admin dashboard for dynamically inserting and updating data (such as project details, skills, and other content) through the backend. AWS will also be used for connecting the frontend and backend, making the process of managing the portfolio more efficient and scalable.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Stack
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-### **Frontend**
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- **React**  
-  Used for building the user interface (UI) and user experience (UX). React allows for a dynamic, responsive, and modern web application with reusable components.
-- **TypeScript**  
-  Adds type safety to JavaScript, improving the reliability and maintainability of the frontend code.
-- **Tailwind CSS**  
-  A utility-first CSS framework used to quickly build custom, responsive designs without writing custom CSS.
+## Learn More
 
-### **Backend**
+To learn more about Next.js, take a look at the following resources:
 
-- **.NET**  
-  The backend is built using .NET to handle server-side logic and operations, such as managing and serving data to the frontend.
-- **C#**  
-  Used with .NET to create an admin dashboard, allowing me to manage and update portfolio content dynamically through a content management system (CMS). This eliminates the need to hard-code content directly into the React app.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### **AWS**
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-- **API Gateway**  
-  Used to connect the frontend and backend, enabling seamless communication between the two.
+## Deploy on Vercel
 
-- **S3**  
-  Used for hosting the static frontend assets (such as HTML, CSS, and JS files) in a cost-effective and scalable manner, ensuring fast and reliable delivery to users.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
