@@ -166,14 +166,10 @@ export default function Skills() {
                   id={`dropdown-content-${skillIndex}`}
                   className={`px-3 text-neutral-400 text-sm leading-relaxed transition-all duration-200 ease-in-out overflow-hidden rounded-b-lg border-x border-b border-slate-700
                     bg-slate-900/90
-                    ${
-                      isOpen
-                        ? "max-h-32 opacity-100 py-2"
-                        : "max-h-0 opacity-0 py-0"
-                    }
+                    ${isOpen ? "opacity-100 py-2" : "max-h-0 opacity-0 py-0"}
                   `}
                   style={{
-                    transitionProperty: "max-height, opacity, padding",
+                    transitionProperty: "opacity, padding",
                   }}
                 >
                   {skill.description}
