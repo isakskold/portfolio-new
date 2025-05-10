@@ -5,7 +5,6 @@ import {
   FaGithub,
   FaLinkedin,
   FaEnvelope,
-  FaPhone,
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -16,7 +15,7 @@ export default function ContactSection() {
       <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-10 shadow-2xl flex flex-col gap-8 border border-slate-700 w-full">
         <div className="flex flex-col items-center mb-2">
           <h2 className="text-2xl font-bold text-cyan-400 mb-1">
-            Let's Connect
+            Let&apos;s Connect
           </h2>
           <p className="text-center text-slate-300 text-lg font-medium max-w-md">
             Interested in working together or have an opportunity in mind? Feel

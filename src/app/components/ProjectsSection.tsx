@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { projects } from "@/data/projects";
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
+import Image from "next/image";
 
 interface Project {
   title: string;
@@ -18,9 +19,6 @@ interface Project {
 export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
-    null
-  );
-  const [slideDirection, setSlideDirection] = useState<"left" | "right" | null>(
     null
   );
   const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(0);
@@ -56,7 +54,6 @@ export default function ProjectsSection() {
   const handleImagePreviewClose = (e: React.MouseEvent) => {
     e.stopPropagation();
     setSelectedImageIndex(null);
-    setSlideDirection(null);
   };
 
   const handlePrevImage = (e: React.MouseEvent) => {
@@ -136,12 +133,15 @@ export default function ProjectsSection() {
             {projects[currentProjectIndex].images
               .slice(0, 2)
               .map((image, index) => (
-                <img
-                  key={index}
-                  src={image.url}
-                  alt={image.alt}
-                  className="flex-1 w-0 h-32 object-cover rounded shadow cursor-pointer hover:opacity-90 transition-opacity aspect-video min-w-0"
-                />
+                <div key={index} className="flex-1 w-0 relative h-32 min-w-0">
+                  <Image
+                    src={image.url}
+                    alt={image.alt}
+                    fill
+                    className="object-cover rounded shadow cursor-pointer hover:opacity-90 transition-opacity"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
               ))}
           </div>
           <div className="flex flex-wrap gap-2 mt-2 max-h-8 overflow-hidden">
