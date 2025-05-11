@@ -28,6 +28,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <GoogleAnalytics />
         <main className="">{children}</main>
+        <div id="modal-root" />
       </body>
     </html>
   );

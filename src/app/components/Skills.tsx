@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import NavButton from "./NavButton";
 
 const skills = [
   {
@@ -85,27 +86,26 @@ export default function Skills() {
   );
 
   return (
-    <div className="flex flex-col items-center mt-8 w-full px-2">
-      <span className="text-2xl font-bold tracking-wider text-neutral-300 mb-6">
-        Technical Expertise
-      </span>
+    <div className="flex flex-col items-center w-full px-2">
+      <div className="relative bg-gradient-to-r from-slate-800 via-slate-800/90 to-slate-800 rounded-xl px-8 py-3 mb-6 before:absolute before:inset-0 before:rounded-xl before:p-[1px] before:bg-gradient-to-r before:from-cyan-400/20 before:via-cyan-400/10 before:to-cyan-400/20 before:-z-10 before:blur-[1px]">
+        <h2 className="text-2xl font-bold tracking-wider text-cyan-400 relative z-10">
+          Technical Expertise
+        </h2>
+      </div>
 
       <div className="relative w-full max-w-xl mb-4">
         <nav className="flex justify-center items-center mb-2">
           {skills.map((skill, index) => (
-            <button
+            <NavButton
               key={skill.category}
               onClick={() =>
                 handleCategoryClick(skill.category as SkillCategory, index)
               }
-              className={`w-1/2 px-2 py-1 text-base font-semibold transition-all transform ${
-                selectedCategory === skill.category
-                  ? "text-cyan-400 scale-105"
-                  : "text-slate-400 hover:text-slate-300"
-              }`}
+              active={selectedCategory === skill.category}
+              className="w-1/2 px-2 py-1"
             >
               {skill.category}
-            </button>
+            </NavButton>
           ))}
         </nav>
         <div

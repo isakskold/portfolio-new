@@ -17,10 +17,10 @@ export default function ProfileCard() {
       {/* Info */}
       <div className="flex-1 text-center md:text-left">
         <h1 className="text-4xl font-extrabold text-white">Isak Sköld</h1>
-        <h2 className="text-xl font-medium text-slate-300 mt-1">
+        <h2 className="text-xl font-medium text-cyan-400 mt-1">
           Fullstack Web Developer
         </h2>
-        <p className="text-slate-400 mt-2 text-sm max-w-md mx-auto md:mx-0">
+        <p className="text-slate-200 mt-2 text-sm max-w-md mx-auto md:mx-0">
           Crafting efficient, user-focused web applications with modern
           technologies and a keen eye for detail.
         </p>

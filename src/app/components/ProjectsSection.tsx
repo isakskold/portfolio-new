@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { projects } from "@/data/projects";
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 import Image from "next/image";
+import Portal from "./Portal";
 
 interface Project {
   title: string;
@@ -115,7 +116,7 @@ export default function ProjectsSection() {
               <FaChevronRight />
             </button>
           </div>
-          <span
+          <h3
             className="text-lg font-bold text-cyan-400 block"
             style={{
               display: "-webkit-box",
@@ -125,7 +126,7 @@ export default function ProjectsSection() {
             }}
           >
             {projects[currentProjectIndex].title}
-          </span>
+          </h3>
           <span className="text-slate-300 text-sm mb-2 line-clamp-4">
             {projects[currentProjectIndex].description}
           </span>
@@ -181,121 +182,129 @@ export default function ProjectsSection() {
 
       {/* Project Modal */}
       {selectedProject && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
-          onClick={handleCloseModal}
-        >
+        <Portal>
           <div
-            className="bg-slate-800 rounded-xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative"
-            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+            onClick={handleCloseModal}
           >
-            <button
-              className="absolute right-4 top-4 text-white text-xl bg-slate-700 bg-opacity-70 rounded-full p-2 hover:bg-slate-600 cursor-pointer"
-              onClick={handleCloseModal}
-              aria-label="Close modal"
+            <div
+              className="bg-slate-800 rounded-xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative"
+              onClick={(e) => e.stopPropagation()}
             >
-              <FaTimes />
-            </button>
-            <h3 className="text-xl font-bold text-white mb-4">
-              {selectedProject.title}
-            </h3>
-            <p className="text-slate-300 mb-4">{selectedProject.description}</p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              {selectedProject.technologies.map((tech) => (
-                <span
-                  key={tech}
-                  className="px-2 py-1 bg-slate-700 rounded-full text-xs text-slate-300"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-            <div className="grid grid-cols-2 gap-4 mb-4">
-              {selectedProject.images.map((image, index) => (
-                <img
-                  key={index}
-                  src={image.url}
-                  alt={image.alt}
-                  className="w-full h-48 object-cover rounded-lg shadow cursor-pointer transition-transform duration-200 hover:scale-105 border border-transparent hover:border-cyan-300"
-                  onClick={(e) => handleImageClick(e, image.url)}
-                />
-              ))}
-            </div>
-            <div className="flex gap-4">
-              <a
-                href={selectedProject.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-400 hover:text-cyan-300"
+              <button
+                className="absolute right-4 top-4 text-white text-xl bg-slate-700 bg-opacity-70 rounded-full p-2 hover:bg-slate-600 cursor-pointer"
+                onClick={handleCloseModal}
+                aria-label="Close modal"
               >
-                View on GitHub
-              </a>
-              {selectedProject.liveUrl && (
+                <FaTimes />
+              </button>
+              <h3 className="text-xl font-bold text-white mb-4">
+                {selectedProject.title}
+              </h3>
+              <p className="text-slate-300 mb-4">
+                {selectedProject.description}
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {selectedProject.technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-2 py-1 bg-slate-700 rounded-full text-xs text-slate-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="grid grid-cols-2 gap-4 mb-4">
+                {selectedProject.images.map((image, index) => (
+                  <img
+                    key={index}
+                    src={image.url}
+                    alt={image.alt}
+                    className="w-full h-48 object-cover rounded-lg shadow cursor-pointer transition-transform duration-200 hover:scale-105 border border-transparent hover:border-cyan-300"
+                    onClick={(e) => handleImageClick(e, image.url)}
+                  />
+                ))}
+              </div>
+              <div className="flex gap-4">
                 <a
-                  href={selectedProject.liveUrl}
+                  href={selectedProject.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-cyan-400 hover:text-cyan-300"
                 >
-                  Live Demo
+                  View on GitHub
                 </a>
-              )}
+                {selectedProject.liveUrl && (
+                  <a
+                    href={selectedProject.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-400 hover:text-cyan-300"
+                  >
+                    Live Demo
+                  </a>
+                )}
+              </div>
             </div>
           </div>
-        </div>
+        </Portal>
       )}
 
       {/* Image Preview Modal */}
       {selectedImageIndex !== null && selectedProject && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
-          onClick={handleImagePreviewClose}
-        >
-          <div className="relative w-full h-full max-w-4xl mx-auto">
-            <div className="relative w-full h-full flex items-center justify-center">
-              <button
-                className="absolute right-4 top-4 text-white text-xl bg-slate-700 bg-opacity-70 rounded-full p-2 hover:bg-slate-600 cursor-pointer z-20"
-                onClick={handleImagePreviewClose}
-                aria-label="Close image preview"
-              >
-                <FaTimes />
-              </button>
-              <div
-                className="flex transition-transform duration-300 ease-in-out w-full h-full"
-                style={{
-                  transform: `translateX(-${(selectedImageIndex ?? 0) * 100}%)`,
-                }}
-              >
-                {selectedProject.images.map((image, index) => (
-                  <div
-                    key={index}
-                    className="w-full h-full flex-shrink-0 flex items-center justify-center"
-                  >
-                    <img
-                      src={image.url}
-                      alt={image.alt}
-                      className="max-w-full max-h-full w-auto h-auto object-contain"
-                    />
-                  </div>
-                ))}
+        <Portal>
+          <div
+            className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
+            onClick={handleImagePreviewClose}
+          >
+            <div className="relative w-full h-full max-w-4xl mx-auto">
+              <div className="relative w-full h-full flex items-center justify-center">
+                <button
+                  className="absolute right-4 top-4 text-white text-xl bg-slate-700 bg-opacity-70 rounded-full p-2 hover:bg-slate-600 cursor-pointer z-20"
+                  onClick={handleImagePreviewClose}
+                  aria-label="Close image preview"
+                >
+                  <FaTimes />
+                </button>
+                <div
+                  className="flex transition-transform duration-300 ease-in-out w-full h-full"
+                  style={{
+                    transform: `translateX(-${
+                      (selectedImageIndex ?? 0) * 100
+                    }%)`,
+                  }}
+                >
+                  {selectedProject.images.map((image, index) => (
+                    <div
+                      key={index}
+                      className="w-full h-full flex-shrink-0 flex items-center justify-center"
+                    >
+                      <img
+                        src={image.url}
+                        alt={image.alt}
+                        className="max-w-full max-h-full w-auto h-auto object-contain"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
+            <button
+              className="absolute left-2 sm:left-8 top-1/2 -translate-y-1/2 text-white text-2xl sm:text-3xl bg-slate-700 bg-opacity-70 rounded-full p-2 hover:bg-slate-600 cursor-pointer"
+              onClick={handlePrevImage}
+              aria-label="Previous image"
+            >
+              <FaChevronLeft />
+            </button>
+            <button
+              className="absolute right-2 sm:right-8 top-1/2 -translate-y-1/2 text-white text-2xl sm:text-3xl bg-slate-700 bg-opacity-70 rounded-full p-2 hover:bg-slate-600 cursor-pointer"
+              onClick={handleNextImage}
+              aria-label="Next image"
+            >
+              <FaChevronRight />
+            </button>
           </div>
-          <button
-            className="absolute left-2 sm:left-8 top-1/2 -translate-y-1/2 text-white text-2xl sm:text-3xl bg-slate-700 bg-opacity-70 rounded-full p-2 hover:bg-slate-600 cursor-pointer"
-            onClick={handlePrevImage}
-            aria-label="Previous image"
-          >
-            <FaChevronLeft />
-          </button>
-          <button
-            className="absolute right-2 sm:right-8 top-1/2 -translate-y-1/2 text-white text-2xl sm:text-3xl bg-slate-700 bg-opacity-70 rounded-full p-2 hover:bg-slate-600 cursor-pointer"
-            onClick={handleNextImage}
-            aria-label="Next image"
-          >
-            <FaChevronRight />
-          </button>
-        </div>
+        </Portal>
       )}
     </section>
   );
