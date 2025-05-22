@@ -57,7 +57,7 @@ export const projects: Project[] = [
       },
     ],
     githubUrl: "https://github.com/isakskold/gz000",
-    liveUrl: "https://gz000.vercel.app",
+    liveUrl: "https://groundzero000.netlify.app/",
   },
   {
     title: "Vegaway Restaurant App",
@@ -92,5 +92,27 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/isakskold/vegaway-app",
     liveUrl: "https://www.veg-away.com",
+  },
+  {
+    title: "Opi - Job Seeker & Recruiter Platform (Work in progress)",
+    description:
+      "A full-stack platform connecting job seekers with recruiters. Currently the service is in development, but users visiting the website are able to enter their email adresses to subscribe to notifications about when we go live.",
+    technologies: ["Next.js", "TypeScript", "AWS", "DynamoDB", "Vercel"],
+    images: [
+      {
+        url: "/opi/OpiMain.png",
+        alt: "Opi platform entry point screenshot",
+      },
+      {
+        url: "/opi/seekerLanding.png",
+        alt: "Opi job seeker landing page",
+      },
+      {
+        url: "/opi/recruiterLanding.png",
+        alt: "Opi recruiter landing page",
+      },
+    ],
+    githubUrl: "https://github.com/isakskold/jobmatch",
+    liveUrl: "https://jobmatch-kappa.vercel.app/",
   },
 ];
